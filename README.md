@@ -2,6 +2,10 @@
 
 Thank you for visiting my portfolio website repository. This Flutter-based website serves as a showcase of my skills, projects, certifications, and ways to get in touch with me. The website is designed with a strong focus on responsiveness, ensuring that it looks and works flawlessly across a range of devices, from large desktop screens to compact Android devices.
 
+## Live Demo
+
+You can explore the live version of the website [Click to see live demo](https://hamad-anwar.github.io/Portfolio/#/)).
+
 ## Screenshots
 
 <img src="demo.png">
@@ -17,10 +21,6 @@ Thank you for visiting my portfolio website repository. This Flutter-based websi
 - [Contributions](#contributions)
 - [Contact Me](#contact-me)
 - [License](#license)
-
-## Live Demo
-
-You can explore the live version of the website [Click to see live demo](https://hamad-anwar.github.io/Portfolio/#/)).
 
 ## Key Features
 
