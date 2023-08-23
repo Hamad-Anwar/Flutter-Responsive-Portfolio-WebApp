@@ -79,3 +79,6 @@ Your feedback and thoughts are highly valued. Feel free to connect with me throu
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+---
+
+### Designed and developed with ❤️ by [Hamad Anwar](https://www.linkedin.com/in/hamad-anwar/).
