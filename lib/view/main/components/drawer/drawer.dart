@@ -22,6 +22,7 @@ class CustomDrawer extends StatelessWidget {
             child: Padding(
                 padding: const EdgeInsets.all(defaultPadding/2),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: defaultPadding/2,),
                     const AreaInfoText(title: 'Contact', text: '03166657602'),
@@ -31,9 +32,7 @@ class CustomDrawer extends StatelessWidget {
                     const SizedBox(
                       height: defaultPadding,
                     ),
-                    const SizedBox(
-                      height: defaultPadding,
-                    ),
+
                     const Text('Skills',style: TextStyle(color: Colors.white),),
                     const SizedBox(
                       height: defaultPadding,

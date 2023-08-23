@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../res/constants.dart';
+
 class MenuButton extends StatelessWidget {
   final VoidCallback? onTap;
   const MenuButton({super.key, this.onTap});
@@ -29,7 +30,7 @@ class MenuButton extends StatelessWidget {
                           color: Colors.blue.withOpacity(.5),
                           offset: const Offset(-1, -1)),
                     ]),
-                child: Center(
+                child:  Center(
                   child: ShaderMask(
                     shaderCallback: (bounds) {
                       return LinearGradient(
@@ -41,7 +42,7 @@ class MenuButton extends StatelessWidget {
                       color: Colors.white,
                       size: defaultPadding * 1.2 * value,
                     ),
-                  ),
+                  )
                 ),
               ),
             );

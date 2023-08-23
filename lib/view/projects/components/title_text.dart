@@ -1,4 +1,5 @@
 
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
 import '../../../view model/responsive.dart';
@@ -17,7 +18,8 @@ class TitleText extends StatelessWidget {
             fontSize:!Responsive.isDesktop(context) ?  Responsive.isLargeMobile(context)? 20:  30 : 50,
             fontWeight: FontWeight.bold
         ),),
-        ShaderMask(shaderCallback: (bounds) {
+        kIsWeb  && Responsive.isDesktop(context) ?  ShaderMask(
+          shaderCallback: (bounds) {
           return LinearGradient(
               end: Alignment.centerRight,
               begin: Alignment.centerLeft,
@@ -31,7 +33,11 @@ class TitleText extends StatelessWidget {
               fontSize:!Responsive.isDesktop(context) ?  Responsive.isLargeMobile(context)? 20:  30 : 50,
               fontWeight: FontWeight.bold
           ),),
-        ),
+        ) : Text(title,style: Theme.of(context).textTheme.titleMedium!.copyWith(
+    color: Colors.white,
+    fontSize:!Responsive.isDesktop(context) ?  Responsive.isLargeMobile(context)? 20:  30 : 50,
+    fontWeight: FontWeight.bold
+    ),),
 
       ],
     );

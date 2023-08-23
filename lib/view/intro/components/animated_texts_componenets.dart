@@ -3,24 +3,49 @@ import 'package:flutter/material.dart';
 import '../../../res/constants.dart';
 import '../../../view model/responsive.dart';
 
-class AnimatedImageContainer extends StatelessWidget {
-  const AnimatedImageContainer(
-      {super.key, this.height = 300, this.width = 250});
+class AnimatedImageContainer extends StatefulWidget {
+  const AnimatedImageContainer({Key? key, this.height = 300, this.width = 250})
+      : super(key: key);
 
   final double? width;
   final double? height;
 
   @override
+  _AnimatedImageContainerState createState() => _AnimatedImageContainerState();
+}
+
+class _AnimatedImageContainerState extends State<AnimatedImageContainer>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1000),
+    )..repeat(reverse: true); // Repeat the animation loop
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return TweenAnimationBuilder(
-      tween: Tween(begin: 0.0, end: 1.0),
-      duration: const Duration(milliseconds: 200),
-      builder: (context, value, child) {
-        return Container(
-          height: height! * value,
-          width: width! * value,
-          padding: const EdgeInsets.all(defaultPadding / 4),
-          decoration: BoxDecoration(
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        final value = _controller.value;
+        return Transform.translate(
+          offset: Offset(0, 2* value), // Move the container up and down
+          child: Container(
+            height: widget.height!,
+            width: widget.width!,
+            padding: const EdgeInsets.all(defaultPadding / 4),
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               gradient: const LinearGradient(colors: [
                 Colors.pinkAccent,
@@ -33,27 +58,40 @@ class AnimatedImageContainer extends StatelessWidget {
                   blurRadius: 20,
                 ),
                 BoxShadow(
-                    color: Colors.blue, offset: Offset(2, 0), blurRadius: 20),
-              ]),
-          child: Container(
+                  color: Colors.blue,
+                  offset: Offset(2, 0),
+                  blurRadius: 20,
+                ),
+              ],
+            ),
+            child: Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  color: Colors.black, borderRadius: BorderRadius.circular(30)),
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(30),
+              ),
               child: Image.asset(
                 'assets/images/image.png',
                 height: Responsive.isLargeMobile(context)
-                    ? MediaQuery.sizeOf(context).width * 0.2 : Responsive.isTablet(context) ? MediaQuery.sizeOf(context).width * 0.14
+                    ? MediaQuery.sizeOf(context).width * 0.2
+                    : Responsive.isTablet(context)
+                    ? MediaQuery.sizeOf(context).width * 0.14
                     : 200,
                 width: Responsive.isLargeMobile(context)
-                    ? MediaQuery.sizeOf(context).width * 0.2 :  Responsive.isTablet(context) ? MediaQuery.sizeOf(context).width * 0.14
+                    ? MediaQuery.sizeOf(context).width * 0.2
+                    : Responsive.isTablet(context)
+                    ? MediaQuery.sizeOf(context).width * 0.14
                     : 200,
                 fit: BoxFit.cover,
-              )),
+              ),
+            ),
+          ),
         );
       },
     );
   }
 }
+
 
 class MyPortfolioText extends StatelessWidget {
   const MyPortfolioText({super.key, required this.start, required this.end});
@@ -84,9 +122,9 @@ class AnimatedSubtitleText extends StatelessWidget {
   final double start;
   final double end;
   final String text;
-
+  final bool gradient;
   const AnimatedSubtitleText(
-      {super.key, required this.start, required this.end, required this.text});
+      {super.key, required this.start, required this.end, required this.text, this.gradient=false,});
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +137,10 @@ class AnimatedSubtitleText extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineLarge!.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.w900,
+              shadows: gradient? [
+                Shadow(color: Colors.pink,offset: Offset(0, 2),blurRadius: 10),
+                 Shadow(color: Colors.pink,offset: Offset(0, -2),blurRadius: 10),
+              ] :[] ,
               height: 0,
               fontSize: value),
         );
