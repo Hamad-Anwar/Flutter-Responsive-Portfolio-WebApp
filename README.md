@@ -50,9 +50,7 @@ The portfolio website is built using Flutter, a powerful open-source UI software
 To explore and interact with the portfolio website on your local machine, follow these steps:
 
 1. **Clone the Repository:**
-   ```bash
    git clone https://github.com/Hamad-Anwar/Responsive-Portolio-Flutter-Web-App.git
-   cd your-portfolio
 2. **Install Dependencies:**
    flutter pub get
 3. **Run Application**
