@@ -8,16 +8,14 @@ You can explore the live version of the website [Click to see live demo](https:/
 
 ## Screenshots
 
-<img src="showcase">
+<img src="showcase.png">
 
 ## Table of Contents
 
-- [Live Demo](#live-demo)
 - [Key Features](#key-features)
 - [Technologies and Packages Used](#technologies-and-packages-used)
 - [Getting Started](#getting-started)
 - [Usage Guide](#usage-guide)
-- [Screenshots](#screenshots)
 - [Contributions](#contributions)
 - [Contact Me](#contact-me)
 - [License](#license)
