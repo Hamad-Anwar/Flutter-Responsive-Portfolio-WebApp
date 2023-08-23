@@ -12,7 +12,6 @@ class CertificateStack extends StatelessWidget {
   final int index;
   @override
   Widget build(BuildContext context) {
-    var size=MediaQuery.sizeOf(context);
     return InkWell(
       onHover: (value) {
         controller.onHover(index, value);

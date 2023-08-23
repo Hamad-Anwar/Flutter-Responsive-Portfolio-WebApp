@@ -3,7 +3,6 @@ class Project {
   final String description;
   final String image;
   final String link;
-
   Project(this.name, this.description, this.image, this.link);
 }
 

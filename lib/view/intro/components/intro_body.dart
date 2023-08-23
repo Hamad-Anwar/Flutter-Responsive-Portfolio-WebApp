@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../res/constants.dart';
 import '../../../view model/responsive.dart';
 import 'animated_texts_componenets.dart';
+import 'combine_subtitle.dart';
+import 'description_text.dart';
 import 'download_button.dart';
+import 'headline_text.dart';
 class IntroBody extends StatelessWidget {
   const IntroBody({super.key});
   @override
@@ -46,74 +49,7 @@ class IntroBody extends StatelessWidget {
                   height: defaultPadding,
                   color: Colors.transparent,
                 ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Responsive(
-                    desktop: AnimatedSubtitleText(
-                        start: 30, end: 40, text: 'Flutter '),
-                    largeMobile: AnimatedSubtitleText(
-                        start: 30, end: 25, text: 'Flutter '),
-                    mobile: AnimatedSubtitleText(
-                        start: 25, end: 20, text: 'Flutter '),
-                    tablet: AnimatedSubtitleText(
-                        start: 40, end: 30, text: 'Flutter '),
-                  ),
-                  (kIsWeb && Responsive.isLargeMobile(context)
-                      ? const Responsive(
-                          desktop: AnimatedSubtitleText(
-                              start: 30,
-                              end: 40,
-                              text: 'Developer ',
-                              gradient: true),
-                          largeMobile: AnimatedSubtitleText(
-                              start: 30,
-                              end: 25,
-                              text: 'Developer ',
-                              gradient: true),
-                          mobile: AnimatedSubtitleText(
-                              start: 25,
-                              end: 20,
-                              text: 'Developer ',
-                              gradient: true),
-                          tablet: AnimatedSubtitleText(
-                              start: 40,
-                              end: 30,
-                              text: 'Developer ',
-                              gradient: true),
-                        )
-                      : ShaderMask(
-                          shaderCallback: (bounds) {
-                            return const LinearGradient(colors: [
-                              Colors.pink,
-                              Colors.blue,
-                            ]).createShader(bounds);
-                          },
-                          child: const Responsive(
-                            desktop: AnimatedSubtitleText(
-                                start: 30,
-                                end: 40,
-                                text: 'Developer ',
-                                gradient: false),
-                            largeMobile: AnimatedSubtitleText(
-                                start: 30,
-                                end: 25,
-                                text: 'Developer ',
-                                gradient: false),
-                            mobile: AnimatedSubtitleText(
-                                start: 25,
-                                end: 20,
-                                text: 'Developer ',
-                                gradient: true),
-                            tablet: AnimatedSubtitleText(
-                                start: 40,
-                                end: 30,
-                                text: 'Developer ',
-                                gradient: false),
-                          ),
-                        ))
-                ],
-              ),
+              const CombineSubtitleText(),
               const SizedBox(height: defaultPadding / 2),
               const Responsive(
                 desktop: AnimatedDescriptionText(start: 14, end: 15),

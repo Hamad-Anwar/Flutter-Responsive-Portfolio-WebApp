@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:url_launcher/url_launcher.dart';
-
+import 'package:flutter_portfolio/view/intro/components/social_media_coloumn.dart';
 import '../../../res/constants.dart';
-
 class SocialMediaIconList extends StatelessWidget {
   const SocialMediaIconList({super.key});
 
@@ -31,11 +28,7 @@ class SocialMediaIconList extends StatelessWidget {
                 borderRadius: BorderRadius.circular(defaultPadding)
             ),
           ),
-           SocialMediaIcon(icon: 'assets/icons/linkedin.svg',onTap: ()=>launchUrl(Uri.parse('https://www.linkedin.com/in/hamad-anwar/'))),
-          SocialMediaIcon(icon: 'assets/icons/github.svg',onTap: () => launchUrl(Uri.parse('https://github.com/Hamad-Anwar')),),
-          const SocialMediaIcon(icon: 'assets/icons/dribble.svg',),
-          const SocialMediaIcon(icon: 'assets/icons/twitter.svg'),
-          const SocialMediaIcon(icon: 'assets/icons/linkedin.svg'),
+          const SocialMediaIconColumn(),
           const Spacer(),
         ],
       ),
@@ -43,19 +36,5 @@ class SocialMediaIconList extends StatelessWidget {
     },);
   }
 }
-class SocialMediaIcon extends StatelessWidget {
-  const SocialMediaIcon({super.key, required this.icon,  this.onTap});
-  final String icon;
-  final VoidCallback? onTap;
-  @override
-  Widget build(BuildContext context) {
-    return InkWell( 
-      onTap:onTap,
-      borderRadius: BorderRadius.circular(20),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: defaultPadding * 0.4),
-        child: SvgPicture.asset(icon,color: Colors.white,height: 15,width: 15,),
-      ),
-    );
-  }
-}
+
+
