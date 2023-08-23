@@ -68,8 +68,6 @@ Once the website is up and running, you'll find a range of sections to explore:
 - **Contact:** Reach out to me through provided contact details or social media links.
 
 
-
-
 ## Contributions
 
 I welcome contributions and suggestions from the community! If you come across any issues, have ideas for improvements, or wish to contribute in any way, feel free to open an issue or submit a pull request. Let's collaborate to make this portfolio even better!
@@ -83,5 +81,5 @@ Your feedback and thoughts are highly valued. Feel free to connect with me throu
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
