@@ -1,10 +1,10 @@
-# My Portfolio Website
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_NETLIFY_BADGE_ID_HERE/status)](https://app.netlify.com/sites/YOUR_NETLIFY_SITE_ID_HERE)
-
-## Welcome!
+# Responsive Flutter Portfolio Applicatoin & Website
 
 Thank you for visiting my portfolio website repository. This Flutter-based website serves as a showcase of my skills, projects, certifications, and ways to get in touch with me. The website is designed with a strong focus on responsiveness, ensuring that it looks and works flawlessly across a range of devices, from large desktop screens to compact Android devices.
+
+## Screenshots
+
+<img src="demo.png">
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ Thank you for visiting my portfolio website repository. This Flutter-based websi
 
 ## Live Demo
 
-You can explore the live version of the website [here](https://www.yourportfolio.com).
+You can explore the live version of the website [Click to see live demo](https://www.yourportfolio.com](https://hamad-anwar.github.io/Portfolio/#/)).
 
 ## Key Features
 
@@ -58,7 +58,6 @@ To explore and interact with the portfolio website on your local machine, follow
 3. **Run Application**
    flutter run
 
-   
 ## Usage Guide
 
 Once the website is up and running, you'll find a range of sections to explore:
@@ -68,9 +67,8 @@ Once the website is up and running, you'll find a range of sections to explore:
 - **Certifications:** Explore my certifications, gaining insight into my professional development journey.
 - **Contact:** Reach out to me through provided contact details or social media links.
 
-## Screenshots
 
-_Insert captivating screenshots of different sections of your portfolio website here._
+
 
 ## Contributions
 
